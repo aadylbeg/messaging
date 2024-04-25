@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello world</title>
+  </head>
+  <!-- http://localhost:3000/ -->
+  <!-- <script defer src="socket.io/socket.io.js"></script>
+   <script defer src="script.js"></script> -->
+
+  <style>
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .container {
+      width: 500px;
+    }
+
+    .container:last-child {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 20px;
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    button {
+      width: calc(50% - 15px);
+      height: 60px;
+    }
+
+    .friends {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .friends__container {
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 20px;
+      padding: 15px;
+      background-color: lightblue;
+    }
+
+    .friends__container-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      line-height: 30px;
+      color: white;
+      font-style: italic;
+    }
+
+    .friend {
+      width: 100%;
+      display: block;
+      border: unset;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 18px;
+      line-height: 26px;
+      color: black;
+      background-color: white;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+    }
+    .friend.online {
+      outline: 5px solid green;
+    }
+
+    .friend.offline {
+      outline: 5px solid red;
+    }
+
+    .friend:last-child {
+      margin-bottom: 0;
+    }
+
+    .friend__messages {
+      width: 100%;
+      padding: 20px;
+      border-radius: 20px;
+      background-color: lightblue;
+    }
+
+    .message {
+      font-size: 24px;
+      line-height: 30px;
+      color: black;
+    }
+
+    .message.to {
+      text-align: right;
+    }
+
+    .message:last-child {
+      margin-bottom: 0;
+    }
+
+    .container__row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  </style>
+
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="friends">
+          <div class="friends__container">
+            <div class="friends__list">
+              <button class="friend">Johny</button>
+            </div>
+          </div>
+        </div>
+        <input id="friend_uuid" type="text" placeholder="Enter UUID" />
+        <div class="container__row">
+          <button class="add">Add</button>
+          <button class="delete">Delete</button>
+        </div>
+        <input id="message" type="text" placeholder="Enter Your Message" />
+        <div class="container__row">
+          <button class="add">Send</button>
+          <button class="delete">Delete</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="friend__messages">
+          <p class="message">Good afternoon!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div id="message-container"></div>
+      <form id="send-container">
+         <input id="message-input" type="text" placeholder="Enter Messsage">
+         <button type="submit" id="send-button">Send</button>
+      </form>-->
+    <h1 id="h1"></h1>
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
